@@ -1,0 +1,15 @@
+{
+  "name": "harjanto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "add-image-size.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "image-size": "^0.3.5",
+    "shelljs": "^0.5.3"
+  }
+}

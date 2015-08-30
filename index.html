@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="harjanto" ng-controller="Main">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Catalog</title>
+    <meta name="viewport" content="initial-scale=0.6, minimum-scale=0.6, maximum-scale=0.6, user-scalable=no">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="app/css/styles.css"/>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="image-list.js"></script>
+    <script type="text/javascript" src="app/js/app-compiled.js"></script>
+    <script type="text/javascript" src="app/js/util-compiled.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-touch.min.js"></script>
+</head>
+<body>
+<div class="header">
+    <div class="static-panel">
+        <div class="left">
+            <img src="app/icons/logo.png" alt="logo"/>
+        </div>
+
+        <div class="right">
+            <a class="email" href="mailto:webadnan@gmail.com">
+                <img src="app/icons/icon_envelope.png" alt="email"/>
+            </a>
+        </div>
+
+        <div class="right">
+            111-111-1111
+        </div>
+    </div>
+</div>
+
+<div class="common-button cross-button" ng-click="onClose()"><span class="fa fa-times"></span></div>
+
+<ul class="thumbnail-group">
+    <li class="thumbnail" ng-repeat="e in images track by $index" ng-click="onClick(e.image, $index)">
+        <img ng-src="{{e.thumbnail}}" alt="" ng-style="getThumbnailStyle(e.thumbnail)"/>
+    </li>
+</ul>
+
+<div class="dark-layer" ng-click="onClose()"></div>
+
+<div class="common-button nav-left" ng-click="onPrevious()"><span class="fa fa-angle-left"></span></div>
+<div class="common-button nav-right" ng-click="onNext()"><span class="fa fa-angle-right"></span></div>
+
+<div class="floating-thumbnail" ng-swipe-right="onPrevious()" ng-swipe-left="onNext()">
+    <img src="app/thumbnails-withsize/01---1920x1080.jpg" alt=""/>
+</div>
+
+</div>
+
+<div class="footer">SM Adnan &#8226; <a class="email-link" href="mailto:webadnan@gmail.com">webadnan@gmail.com</a></div>
+
+</body>
+</html>
